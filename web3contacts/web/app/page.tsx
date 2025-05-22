@@ -37,10 +37,10 @@ export default function Home() {
       <main className="flex-grow flex flex-col items-center p-8">        
         {userObjects && (
           <div className="w-full max-w-6xl">
-            <h2 className="text-2xl font-bold mb-4">Your Assets</h2>
+            <h2 className="text-2xl font-bold mb-4">Contacts</h2>
             
             <div className="flex gap-8">
-              <div className="flex-1">
+              {/* <div className="flex-1">
                 <h3 className="text-xl font-semibold mb-2">Coins</h3>
                 {Object.entries(userObjects.coins).map(([coinType, coins]) => {
                   const totalBalance = calculateTotalBalance(coins);
@@ -52,10 +52,10 @@ export default function Home() {
                     </div>
                   );
                 })}
-              </div>
+              </div> */}
               
               <div className="flex-1">
-                <h3 className="text-xl font-semibold mb-2">Other Objects</h3>
+                <h3 className="text-xl font-semibold mb-2">Contacts(联系人)</h3>
                 <div className="h-[500px] overflow-y-auto pr-4">
                   {Object.entries(userObjects.objects).map(([objectType, objects]) => (
                     <div key={objectType} className="mb-4 p-4 bg-gray-100 rounded-lg">
@@ -63,6 +63,7 @@ export default function Home() {
                       <p>Count: {objects.length}</p>
                       <p className="text-gray-500 text-sm">{objectType.split('::').pop()}</p>
                       <p className="text-gray-500 text-sm">{objectType.split('::')[0]}</p>
+                      <button type="button" className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">transfer</button>
                     </div>
                   ))}
                 </div>
@@ -80,3 +81,4 @@ export default function Home() {
     </div>
   );
 }
+constructor

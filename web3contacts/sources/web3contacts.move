@@ -169,16 +169,17 @@ public entry fun create_profile(
      });
 }
 
-
+//创建名片互换
 public entry fun mint_cp_card(
-    name:String,
+    myname:String,
+    cpName:String,
     cpAddr:address,
     description:String,
-    url:String,
+    myurl:String,
     url_cp:String,
     ctx:&mut TxContext){
-        new_card(name,cpAddr,description,url,ctx);
-        new_card(name,ctx.sender(),description,url_cp,ctx);
+        new_card(cpName,cpAddr,description,myurl,ctx);
+        new_card(myname,ctx.sender(),description,url_cp,ctx);
     
 }
 
@@ -284,6 +285,9 @@ public fun get_image_url(card:&Card):String{
      card.image_url
 }
 
+ public fun assert_input_amount<T0>(arg0: u64, arg1: &0x2::coin::Coin<T0>) {
+        assert!(0x2::coin::value<T0>(arg1) == arg0, 14);
+    }
 
 
 
