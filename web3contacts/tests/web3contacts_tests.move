@@ -57,14 +57,5 @@ fun test_create_profile() {
     test_scenario::end(scenario_val);
 }
 
-#[test]
-fun test_human_relations() {
-    // pass
-}
-
-#[test, expected_failure(abort_code = ::human_relations::human_relations_tests::ENotImplemented)]
-fun test_human_relations_fail() {
-    abort ENotImplemented
-}
 
 
