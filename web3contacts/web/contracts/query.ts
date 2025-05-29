@@ -34,7 +34,7 @@ export const create_profile =createBetterTxFactory<{  name: string,description:s
   tx.moveCall({
     package: networkVariables.Package,
     module: "web3contacts",
-    function: "create_froflie",
+    function: "create_profile",
     arguments: [
       tx.pure.string(params.name),
       tx.pure.string(params.description),
